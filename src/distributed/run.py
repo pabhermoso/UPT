@@ -105,9 +105,12 @@ def _run_multiprocess(rank, accelerator, device_ids, master_port, world_size, ma
     # currently only single node is supported
     os.environ["MASTER_ADDR"] = "localhost"
     os.environ["MASTER_PORT"] = str(master_port)
+    
+    torch.cuda.set_device(int(device_ids[rank]))
+
     if accelerator == "gpu":
         os.environ["CUDA_VISIBLE_DEVICES"] = device_ids[rank]
-        _check_single_device_visible()
+        #_check_single_device_visible()
 
     from torch.distributed import init_process_group, destroy_process_group
     init_process_group(

@@ -157,3 +157,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# data
+data/
+results/
+
+# venv
+upt_venv/

@@ -3,9 +3,9 @@ name: snc-all-sdfpos-e1000-subsam1-lr5e4-sdfperconly-seqlen1024-sdf512-cnext-dim
 stage_name: stage1
 vars:
   lr: 5.0e-4
-  batch_size: 32
+  batch_size: 1
   max_batch_size: 16
-  epochs: 1000
+  epochs: 100 #1000
   grid_resolution: 32
 
   optim:

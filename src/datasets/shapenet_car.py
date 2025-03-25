@@ -121,10 +121,10 @@ class ShapenetCar(DatasetBase):
         if split == "train":
             train_idxs = [i for i in range(len(self.uris)) if i not in self.TEST_INDICES]
             self.uris = [self.uris[train_idx] for train_idx in train_idxs]
-            assert len(self.uris) == 700
+            assert len(self.uris) == 700, f"found {len(self.uris)} uris instead of 700"
         elif split == "test":
             self.uris = [self.uris[test_idx] for test_idx in self.TEST_INDICES]
-            assert len(self.uris) == 189
+            assert len(self.uris) == 189, f"found {len(self.uris)} uris instead of 189"
         else:
             raise NotImplementedError
 
